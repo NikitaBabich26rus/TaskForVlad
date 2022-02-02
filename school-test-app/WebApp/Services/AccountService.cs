@@ -44,5 +44,8 @@ namespace WebApp.Services
 
             return account;
         }
+
+        public void UpdateAccountAsync(Account account)
+            => _cache.AddOrUpdate(account);
     }
 }

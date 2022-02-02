@@ -8,7 +8,7 @@ using WebApp.Services;
 namespace WebApp.Controllers
 {
     [Route("api")]
-    public class LoginController : ControllerBase
+    public class LoginController : Controller
     {
         private readonly IAccountDatabase _db;
 

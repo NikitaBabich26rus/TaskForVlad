@@ -17,7 +17,7 @@ namespace WebApp.Test
         public void Start()
         {
             var builder = WebHost.CreateDefaultBuilder();
-            builder.UseStartup<TestStartup>();
+            builder.UseStartup<TestsStartup>();
             _testServer = new TestServer(builder);
             
         }

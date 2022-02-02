@@ -12,7 +12,7 @@ using WebApp.Services;
 
 namespace WebApp.Test
 {
-    public class TestStartup
+    public class TestsStartup
     {
         
         public void ConfigureServices(IServiceCollection services)

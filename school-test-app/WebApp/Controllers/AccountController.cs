@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,7 @@ namespace WebApp.Controllers
     // TODO 4: unauthorized users should receive 401 status code
     [Authorize] 
     [Route("api/account")]
-    public class AccountController : ControllerBase
+    public class AccountController : Controller
     {
         private readonly IAccountService _accountService;
 
@@ -42,6 +43,7 @@ namespace WebApp.Controllers
             //Update account in cache, don't bother saving to DB, this is not an objective of this task.
             var account = await Get();
             account.Counter++;
+            _accountService.UpdateAccountAsync(account);
         }
     }
 }
